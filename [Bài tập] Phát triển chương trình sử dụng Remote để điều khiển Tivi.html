@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Phát triển chương trình sử dụng Remote để điều khiển TiVi</title>
+</head>
+<body>
+<script>
+    var control = function (code, channel) {
+        this.code = code;
+        this.channel = 7;
+        this.volume = 10;
+        this.status = false;
+
+        this.turnOn = function () {
+            if (this.status = true) {
+                console.log("bật tivi")
+            }
+        };
+
+        this.turnOff = function () {
+            if (this.status = false) {
+                console.log("tivi đã được tắt")
+            }
+        };
+
+        this.volumeUp = function () {
+            if (this.status == true) {
+                ++this.volume;
+                console.log("âm lượng tăng lên   " + this.volume)
+            } else {
+                console.log("hãy bật tivi để tăng âm lượng")
+            }
+        };
+
+        this.downTheVolume = function () {
+            if (this.status == true) {
+                --this.volume;
+                console.log("âm lượng giảm   " + this.volume);
+            } else {
+                console.log("hãy bật tivi để giảm âm lượng")
+            }
+        };
+
+        this.channel = function () {
+            if (this.status == true) {
+                var changeTheChannel = prompt("nhập kênh bạn muốn chuyển đến");
+                console.log("đã chuyển đến kênh   " + changeTheChannel)
+            } else {
+                console.log("hãy bật tivi để chuyển kênh")
+            }
+        };
+    };
+
+    var television = function (currentChannel, currentSalary, volume) {
+        this.currentChannel = currentChannel;
+        this.currentSalary = currentSalary;
+        this.volume = volume;
+
+        this.theChannel = function () {
+
+        };
+
+        this.turnOn = function () {
+            return this.turnOn
+        };
+
+        this.turnOff = function () {
+            return this.turnOff
+        };
+
+        this.setvolumeUp = function (_volume) {
+            this.volume = _volume;
+        };
+
+        this.getVolume = function () {
+            return this.volume
+        };
+
+        this.volumeUp = function () {
+            ++this.volume;
+            console.log("âm lượng tăng lên   " + this.volume())
+        };
+
+        this.downTheVolume = function () {
+            --this.volume;
+            console.log("âm lượng giảm   " + this.volume);
+        };
+
+        this.channel = function () {
+            var changeTheChannel = prompt("nhập kênh bạn muốn chuyển đến");
+            console.log("đã chuyển đến kênh   " + changeTheChannel)
+        }
+    };
+    var cont = new control(10);
+
+    function turnOnTheTV() {
+        cont.turnOn()
+    }
+
+    function volumeup() {
+        cont.volumeUp()
+    }
+
+    function downTheVolume() {
+        cont.downTheVolume()
+    }
+
+    function turnOff() {
+        cont.turnOff()
+    }
+
+    function channel() {
+        cont.channel()
+    }
+</script>
+<button type="button" onclick="turnOnTheTV()" style="width: 200px; height: 40px; background-color: red; color: white">
+    turn on the TV
+</button>
+<button type="button" onclick="turnOff()" style="width: 200px; height: 40px; background-color: red; color: white">turn
+    off the TV
+</button>
+<br>
+<button type="button" onclick="volumeup()" style="width: 200px; height: 40px; background-color: red; color: white">
+    volumeup
+</button>
+<button type="button" onclick="downTheVolume()" style="width: 200px; height: 40px; background-color: red; color: white">
+    downTheVolume
+</button>
+<button type="button" onclick="channel()" style="width: 200px; height: 40px; background-color: red; color: white">
+    channel
+</button>
+</body>
+</html>
